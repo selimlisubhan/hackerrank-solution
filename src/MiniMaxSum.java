@@ -7,10 +7,10 @@ public class MiniMaxSum {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[5];
+        long[] arr = new long[5];
         System.out.println("Z");
         for (int i = 0; i < 5; i++) {
-            arr[i] = scanner.nextInt();
+            arr[i] = scanner.nextLong();
         }
 
 /*        if sortArray() function use
@@ -23,32 +23,33 @@ public class MiniMaxSum {
         System.out.println(sum);
     }
 
-    private static String minMax(int[] arrSort) {
+    private static String minMax(long[] arrSort) {
         /* if sortArray() function use
 
         int first = arrSort[0];
         int last = arrSort[arrSort.length - 1];
         */
 
-        int sum = 0;
-        int first = arrSort[0];
-        int last = arrSort[0];
+        long sum = 0;
+        long first = arrSort[0];
+        long last = arrSort[0];
 
         for (int i = 0; i < arrSort.length; i++) {
+            sum += arrSort[i];
+            // if if sortArray() function not use
             if (arrSort[i] < first) {
                 first = arrSort[i];
             }
             if (arrSort[i] > last) {
                 last = arrSort[i];
             }
-            sum += arrSort[i];
         }
         return (sum - last) + " " + (sum - first);
     }
 
-    private static int[] sortArray(int[] arr) {
+    private static long[] sortArray(long[] arr) {
         boolean sorted = false;
-        int temp;
+        long temp;
         while (!sorted) {
             sorted = true;
             for (int i = 0; i < arr.length - 1; i++) {

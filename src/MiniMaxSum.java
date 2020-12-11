@@ -5,9 +5,9 @@ public class MiniMaxSum {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("Zəhmət olmazsa 5 rəqəm daxil edin");
 
         long[] arr = new long[5];
-        System.out.println("Zəhmət olmazsa 5 rəqəm daxil edin");
         for (int i = 0; i < 5; i++) {
             arr[i] = scanner.nextLong();
         }

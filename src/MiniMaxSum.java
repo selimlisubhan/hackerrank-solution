@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MiniMaxSum {
@@ -8,7 +7,7 @@ public class MiniMaxSum {
     public static void main(String[] args) {
 
         long[] arr = new long[5];
-        System.out.println("Z");
+        System.out.println("Zəhmət olmazsa 5 rəqəm daxil edin");
         for (int i = 0; i < 5; i++) {
             arr[i] = scanner.nextLong();
         }

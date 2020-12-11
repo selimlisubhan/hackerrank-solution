@@ -12,21 +12,19 @@ public class TimeConversion {
 
     private static String timeConversion(String time) {
         String[] listTime = time.split(":");
-        String hour = listTime[0];
-        String minutes = listTime[1] + listTime[2].substring(0, 2);
+        String hours = listTime[0];
+        int hour = Integer.parseInt(hours);
+        String minutes = listTime[1] + ":" + listTime[2].substring(0, 2);
         String period = listTime[2].substring(2, 4);
-        if (period.equals("AM")) {
-            if (hour.equals("12"))
-                hour = "00";
 
-        } else {
-            if (!hour.equals("12")) {
-                int h = Integer.parseInt(hour);
-                h = h + 12;
-                hour = "" + h;
-            }
+        if (period.equals("AM") && hour == 12) {
+            hours = "00";
+        } else if (period.equals("PM") && hour < 12) {
+            hour = hour + 12;
+            hours = "" + hour;
         }
-        return hour + ":" + minutes;
+
+        return hours + ":" + minutes;
     }
 
 }
